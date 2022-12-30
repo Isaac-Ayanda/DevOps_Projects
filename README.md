@@ -1,9 +1,9 @@
 # DevOps_Projects
 ## Below are my Implementation of 25 Intensive DevOps Projects following Dare.IO professional Project Based Learning:
 
-1. ![AWS-LAMP-STACK IMPLEMENTATION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/01.LAMP-Web-Stack-Implementation/project1.md)
+1. [AWS-LAMP-STACK IMPLEMENTATION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/01.LAMP-Web-Stack-Implementation/project1.md)
 
-2. ***LEMP STACK IMPLEMENTATION***
+2. [LEMP STACK IMPLEMENTATION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/02.LEMP-Web-Stack-Implementation/project2.md)
 
 3. ***MERN WEB STACK IMPLEMENTATION***
 

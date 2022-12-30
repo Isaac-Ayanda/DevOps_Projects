@@ -1,6 +1,8 @@
-## PROJECT1: WEB STACK IMPLEMENTATION (LAMP STACK) IN AWS
+# Deploying a LAMP (Linux,Apache,Mysql,PhP) Stack application (LAMP STACK) on AWS Cloud
 
-First Step: Installed Apache & updating the server
+ In this project, I learnt how to serve PHP websites and applications to website visitors, using LAMP Stack which make use a Linux server, Apache, an open source software for serving web pages; as web server and MySQL as database management system.
+
+## First Step: Installed Apache & updating the server
 1. Update packages in package manager.
 ![Update packages](./images/Update-packages-pm.jpg)
 
