@@ -2,24 +2,27 @@
 
  In this project, I learnt how to serve PHP websites and applications to website visitors, using LAMP Stack which make use a Linux server, Apache, an open source software for serving web pages; as web server and MySQL as database management system.
 
-## First Step: Installed Apache & updating the server
-1. Update packages in package manager.
+## First Step: Launch EC2 instance on AWS cloud and Install Apache & update the server
+1. Lauch a Linux EC2 instance on AWS Cloud.
+![Launch EC2 instance](./images/NewNginxintance.jpg)
+
+2. Update packages in package manager.
 ![Update packages](./images/Update-packages-pm.jpg)
 
-2. Run command (sudo apt install apache2) for apache installation.
+3. Run command (sudo apt install apache2) for apache installation.
 ![install apache](./images/Command-for-installing-apache.jpg)
 
-3. Verify successful installtion (run sudo systemctl status apache2).
+4. Verify successful installtion (run sudo systemctl status apache2).
 ![verify installation](./images/apache-install-verification.jpg)
 
-4. run command (curl http://127.0.0.1:80 or http://localhost:80) to Check how to access the webserver locally.
+5. run command (curl http://127.0.0.1:80 or http://localhost:80) to Check how to access the webserver locally.
 ![webserver Local access](./images/4.webserver-local-access-via-IP.jpg)
 ![webserver Local access](./images/4.webserver-local-access-via-DNS.jpg)
 
-5. Add inbound rule for HTTP on AWS instance.
+6. Add inbound rule for HTTP on AWS instance.
 ![Add inbound rule](./images/5.added-inboundrule-http.jpg)
 
-6. Access webserver(via  public IP) via Browser.
+7. Access webserver(via  public IP) via Browser.
 ![Access webserver](./images/6.access-webserver-via-browser.jpg)
 
 
