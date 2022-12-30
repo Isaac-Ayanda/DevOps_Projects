@@ -4,7 +4,7 @@
 
 ## First Step: Launch EC2 instance on AWS cloud and Install Apache & update the server
 1. Lauch a Linux EC2 instance on AWS Cloud.
-![Launch EC2 instance](./images/NewNginxintance.jpg)
+![Launch EC2 instance](./images/NewApacheintance.jpg)
 
 2. Update packages in package manager.
 ![Update packages](./images/Update-packages-pm.jpg)
