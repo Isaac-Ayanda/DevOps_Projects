@@ -1,5 +1,5 @@
 # DevOps_Projects
-## The following are my Implementation of 25 Intensive DevOps Projects following Dare.IO professional Project Based Learning:
+## Below are my Implementation of 25 Intensive DevOps Projects following Dare.IO professional Project Based Learning:
 
 1. ![AWS-LAMP-STACK IMPLEMENTATION](../LAMP-Web-Stack-Implementation/project1.md)
 
