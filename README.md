@@ -5,7 +5,7 @@
 
 2. [LEMP STACK IMPLEMENTATION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/02.LEMP-Web-Stack-Implementation/project2.md)
 
-3. ***MERN WEB STACK IMPLEMENTATION***
+3. [MERN WEB STACK IMPLEMENTATION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/03.MERN-Web-Stack-Implementation/project3.md)
 
 4. ***MEAN STACK IMPLEMENTATION***
 
