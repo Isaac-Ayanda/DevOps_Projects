@@ -21,7 +21,6 @@ In this project, I setup a Three-Tier architecture using AWS infrastructure and 
     - Run `sudo gdisk /dev/xvdg`. 
     - Run `sudo gdisk /dev/xvdh`.
 
-![create sigle partition](./images/entire-setupu.jpg)
 
 - *Install lvm package:* 
     - `sudo yum install lvm2 -y`.
@@ -30,7 +29,6 @@ In this project, I setup a Three-Tier architecture using AWS infrastructure and 
 - *Create physical volumes to be used by lvm:* 
     - Run `sudo pvcreate /dev/xvdf1 /dev/xvdg1 /dev/xvdh1`
 
-![create physical volume](./images/entire-setupu.jpg)
 
 - *Check that the pvs have been added:* 
     - Run `sudo pvs`.
@@ -43,7 +41,6 @@ In this project, I setup a Three-Tier architecture using AWS infrastructure and 
     - Run `sudo lvcreate -n lv-logs -L 9G webdata-vg`
     - Run `sudo lvcreate -n lv-opt -L 9G webdata-vg`
 
-![create logical volume](./images/entire-setupu.jpg)
 
 - *Format disks as xfs instead of ext4:*
     - Run `sudo mkfs -t xfs /dev/webdata-vg/lv-apps`
