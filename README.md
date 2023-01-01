@@ -7,7 +7,7 @@
 
 3. [MERN WEB STACK IMPLEMENTATION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/03.MERN-Web-Stack-Implementation/readme.md)
 
-4. ***MEAN STACK IMPLEMENTATION***
+4. [MEAN STACK IMPLEMENTATION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/04.MEAN-Web-Stack-Implementation/readme.md)
 
 5. ***IMPLEMENT A CLIENT SERVER ARCHITECTURE USING MYSQL DATABASE MANAGEMENT SYSTEM (DBMS)***
 

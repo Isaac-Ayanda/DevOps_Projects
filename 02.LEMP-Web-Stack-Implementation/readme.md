@@ -1,6 +1,6 @@
 # Deploying and Configuring a LEMP Stack Application On AWS Cloud
 
- In this project, I learnt how to build a flexible foundation for serving PHP websites and applications to website visitors, using Nginx as web server and MySQL as database management system.  LEMP Stack makes use of Nginx as the web server for hosting the web application. NGINX is an open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.
+ In this project, I built a application for serving PHP websites and applications to website visitors, using Nginx as web server and MySQL as database management system.  LEMP Stack makes use of Nginx as the web server for hosting the web application. NGINX is an open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.
 
 ## First step: Install Nginx webserver.
 1. Create/launch a new EC2 instance for Nginx.

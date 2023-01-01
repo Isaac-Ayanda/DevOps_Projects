@@ -1,7 +1,6 @@
 # Depoying Application on AWS cloud using MERN(MongoDB, Express, REACT, and Node) Stack 
-- In this Project I created a simple To-Do and deployed it using MERN stack. 
-- The frontend application uses React.js that communicates with the backend application written using Expressjs. 
-- Mongodb backend is used for storing tasks in a database.
+- In this Project I deployed a simple To-Do application using MERN stack. 
+- The frontend application uses React.js that communicates with the backend application written in  Expressjs. Data is stored in the Mongodb  also in the backend application.
 
 ## First Step: Backend Configuration
 1. Create an EC2 instance server in AWS.

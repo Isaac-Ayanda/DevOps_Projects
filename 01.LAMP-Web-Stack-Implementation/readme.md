@@ -1,6 +1,6 @@
 # Deploying a LAMP (Linux,Apache,Mysql,PhP) Stack application (LAMP STACK) on AWS Cloud
 
- In this project, I learnt how to serve PHP websites and applications to website visitors, using LAMP Stack which make use a Linux server, Apache, an open source software for serving web pages; as web server and MySQL as database management system.
+ In this project, I setup a application for serving PHP websites and applications to website visitors, using LAMP Stack which make use a Linux server, Apache, an open source software for serving web pages; as web server and MySQL as database management system.
 
 ## First Step: Launch EC2 instance on AWS cloud and Install Apache & update the server
 1. Lauch a Linux EC2 instance on AWS Cloud.
