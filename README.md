@@ -11,11 +11,11 @@
 
 5. [IMPLEMENT A CLIENT SERVER ARCHITECTURE USING MYSQL DATABASE MANAGEMENT SYSTEM (DBMS)](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/05.Client-Server-Architecture/readme.md)
 
-6. [Shell Scripting - Automated the Onboarding of 20 users](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/06.Aux-Project-Shell-Scripting/readme.md)
+6. [SHELL SCRIPTING - ONBOARDING AUTOMATION OF 20 USERS](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/06.Aux-Project-Shell-Scripting/readme.md)
 
 7. [WEB SOLUTION WITH WORDPRESS](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/07.Web-Solution-With-WordPress/readme.md)
 
-8. [DEVOPS TOOLING WEBSITE SOLUTION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/08.DevOps-Tooling-Website-solution/readme.md)
+8. [DEVOPS TOOLING WEBSITE SOLUTION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/readme.md)
 
 9. ***LOAD BALANCER SOLUTION WITH APACHE***
 
