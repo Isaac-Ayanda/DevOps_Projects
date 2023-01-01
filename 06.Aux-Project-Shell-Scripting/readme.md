@@ -1,5 +1,5 @@
         
-## AUX PROJECT1: Onboarding of 20 users using Shell Scripting
+## Shell Scripting: Onboarding of 20 users using Shell Scripting
 
 1. Launch an EC2 t2 micro ubuntu Linux instance on AWS Cloud.
 
