@@ -1,6 +1,8 @@
 # Web Solution With WordPress
 
-In this project, I setup a Three-Tier architecture comprising of a client, a linux Redhat webserver and installed WordPress web solution and another linux Redhat database server and installed the required database.
+In this project, I setup a Three-Tier architecture comprising of a client, a linux Redhat webserver where I installed WordPress and another linux Redhat database server where I installed the database.
+- `I worked with some storage and disk management utlities that ensures that the disks used to store files on the Linux servers are adequately partitioned and managed.`
+- `I prepared storage infrastructure for the web and database servers on Redhat Linux os  and implemented a web solution using WordPress and MySQL Database Management System.`
 
 ## First Step: Prepare a Web Server
 1. Launch an EC2 RedHat instance that will serve as webserver and create 3 volumes in the same AZ as the webserver EC2, each of 10 GiB.

@@ -15,7 +15,7 @@
 
 7. [WEB SOLUTION WITH WORDPRESS](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/07.Web-Solution-With-WordPress/readme.md)
 
-8. [DEVOPS TOOLING WEBSITE SOLUTION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/readme.md)
+8. [DEVOPS TOOLING WEBSITE SOLUTION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/08.DevOps-Tooling-Website-solution/readme.md)
 
 9. ***LOAD BALANCER SOLUTION WITH APACHE***
 
