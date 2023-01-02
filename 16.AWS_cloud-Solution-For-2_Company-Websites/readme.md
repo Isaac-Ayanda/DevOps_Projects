@@ -1,5 +1,5 @@
 # AWS Cloud Solution For Two Company Websites Using A Reserve Proxy Technology
-In this project, I built a secure infrastructure inside AWS VPC (Virtual Private Cloud) network for a fictitious company that uses WordPress CMS for its corperate website, and a Tooling Website (https://github.com/Isaac-Ayanda/tooling) for their DevOps team - As part of the company’s desire for improved security and performance, a decision has been made to realize the infrastructure setup using NGINX reverse proxy technology. The infrastructure would need to be resilient and at optimized cost.
+In this project, I built a secure infrastructure inside AWS VPC (Virtual Private Cloud) network for a fictitious company that uses WordPress CMS for its corperate website, and a [Tooling](https://github.com/Isaac-Ayanda/tooling) Website for their DevOps team - As part of the company’s desire for improved security and performance, a decision has been made to realize the infrastructure setup using NGINX reverse proxy technology. The infrastructure would need to be resilient and at optimized cost.
 
 ## Project Architecture Diagram
 #
