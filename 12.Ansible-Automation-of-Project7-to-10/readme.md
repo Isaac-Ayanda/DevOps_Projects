@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Ansible Automation of Project7 to Project10
 In this project, I configured an Ansible client server as a Bastion Host and and create an Ansible playbook to automate servers configurations for 5 Servers (RedHat and Ubuntu).
 
@@ -175,6 +174,4 @@ Run `ansible-playbook -i /var/lib/jenkins/jobs/ansible/builds/(latest build numb
 ![task succcefully executed](./images/confirm1.png)
 ![task succcefully executed](./images/confirm2.png)
 ![task succcefully executed](./images/confirm3.png)
-=======
 
->>>>>>> f5163cd129aac7ff07fcc1fc5374efb77e242a09
