@@ -41,7 +41,7 @@
 
 19. [AUTOMATE INFRASTRUCTURE WITH IAC USING TERRAFORM. PART 3 --Refactoring](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/19.Automate-Infrastructure-With-IaC-Using-Terraform-Pt-3/readme.md)
 
-20. [Automate Infrastructure With IaC using Terraform – Terraform Cloud](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/20.Automate-Infrastructure-With-IaC-Using-Terraform-Pt-4/readme.md)
+20. [AUTOMATE INFRASTRUCTURE WITH IAC USING TERRAFORM. – TERRAFORM CLOUD](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/20.Automate-Infrastructure-With-IaC-Using-Terraform-Pt-4/readme.md)
     
 21. [MIGRATION TO THE СLOUD WITH CONTAINERIZATION. PART 1 - DOCKER & DOCKER COMPOSE](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/21.Migration-to-the-Cloud-With-Containerization-Pt-1/readme.md)
     
