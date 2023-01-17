@@ -1,4 +1,4 @@
-# Migration To The Сloud With Contanerization. Part 1 – docker And docker-compose
+# Migration To The Сloud With Containerization (docker & docker-compose).
 
 
 ## Install Docker
@@ -18,45 +18,106 @@ sudo apt install docker-ce
 sudo usermod -aG docker ${USER}
 ```
 
-## Connecting to the Docker mysql container
+## Creating and connecting to the mysql Docker  container
 
 
 - Pull mysql image from docker
 ```bash
-docker pull mysql
+docker pull mysql/mysql-server:latest
 ```
+- Run a container from this image and setup the mysqldb environment variables
 
-- Create a network in docker
+
 ```bash
-docker network create --subnet=172.18.0.0/24 tooling_app_network
-```
+docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysql/mysql-server:latest
 
-- Run a container with mysql image
+```
+![pull mysql image from docker ](./images/pull-mysql.png)
+
+- Connection can be made directly to the container via the mysql server or using a second container as a client.
+
+	- Direct connection to container via mysql server
+	```
+	 $ docker exec -it mysql_db mysql -uroot -p
+	```
+	![direct connect ](./images/d1.png)
+
+	- Connnection to container via client. This requires adding a network. There is need to stop and remove the previous mysql docker container. Then run the MySQL Server container using a created network.
+	![removing container ](./images/rm1.png)
+	![removing container ](./images/rm1.png)
+
+		- First, create an environment variable to store the root password: 
+		```
+		$ export MYSQL_PW= <password>
+		```
+		- Verify the environment variable is created.
+
+		```
+		 echo $MYSQL_PW
+		```
+		- Create a network in docker
+		```bash
+		docker network create --subnet=172.18.0.0/24 tooling_app_network
+		```
+
+		- Run a container with mysql image
+		```bash
+		docker run --network tooling_app_network -h mysqlserverhost --name=mysql-server -e MYSQL_ROOT_PASSWORD=$MYSQL_PW  -d mysql/mysql-server:latest
+		```
+
+		![run a container ](./images/runcwi.png)
+		![status ](./images/status.png)
+
+
+	- Create a new mysql user: As you already know, it is best practice not to connect to the MySQL server remotely using the root user. Therefore, we will create an SQL script that will create a user we can use to connect remotely.
+
+		- Create a file and name it create_user.sql and add the below code in the file:
+
+		```
+		$ CREATE USER 'isaac'@'%' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON * . * TO 'isaac'@'%';
+		```
+		- Run the Script. If you see a warning as follows, it is acceptable to ignore:
+		`mysql: [Warning] Using a password on the command line interface can be insecure.`
+ 
+		```
+		docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < create_user.sql
+		```
+		![run script to create user ](./images/user.png)
+
+## Creating database schema & integration
+
+- Clone the Tooling App
 ```bash
-docker run --network tooling_app_network -h mysqlserverhost --name=mysql-server -e MYSQL_ROOT_PASSWORD=$MYSQL_PW  -d mysql
+git clone https://github.com/Isaac-Ayanda/tooling-1.git
 ```
 
-- Create a new mysql user
+
+- Populate the database with the tooling users from the terminal and export the location of the SQL file
 ```bash
-docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < create_user.sql
-```
+export tooling_db_schema=tooling-1/html/db-schema.sql
 
+docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < $tooling_db_schema
+```
+- Verify that the path is exported
+		![verify exported path ](./images/vpath.png)
+		![populate database](./images/dbschema.png)
+
+- Update the .env file with connection details to the database The .env file is located in the html tooling/html/.env folder but not visible in terminal. 
+
+```
+sudo vi .env
+
+MYSQL_IP=mysqlserverhost MYSQL_USER=username MYSQL_PASS=client-secrete-password MYSQL_DBNAME=toolingdb
+```
 - Connect to the mysql container from terminal
 ```bash
 docker run --network tooling_app_network --name mysql-client -it --rm mysql mysql -h mysqlserverhost -u$mysql_username -p
 ```
 
-- Clone the Tooling App
-```bash
-git clone https://github.com/Horleryheancarh/tooling-1.git
-```
 
-- Populate the database with the tooling users
-```bash
-export tooling_db_schema=./html/tooling_db_schema.sql
 
-docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < $tooling_db_schema
-```
+- 
+
 
 - Build the tooling app image
 ```bash
