@@ -4,18 +4,18 @@
 ## Install Docker
 
 ```bash
-sudo apt update
+$ sudo apt update
 
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
-sudo apt install docker-ce
+$ sudo apt install docker-ce
 
 # to add docker to sudo group
-sudo usermod -aG docker ${USER}
+$ sudo usermod -aG docker ${USER}
 ```
 
 ## Creating and connecting to the mysql Docker  container
@@ -23,13 +23,13 @@ sudo usermod -aG docker ${USER}
 
 - Pull mysql image from docker
 ```bash
-docker pull mysql/mysql-server:latest
+$ docker pull mysql/mysql-server:latest
 ```
 - Run a container from this image and setup the mysqldb environment variables
 
 
 ```bash
-docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysql/mysql-server:latest
+$ docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysql/mysql-server:latest
 
 ```
 ![pull mysql image from docker ](./images/pull-mysql.png)
@@ -44,7 +44,7 @@ docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysq
 
 	- Connnection to container via client. This requires adding a network. There is need to stop and remove the previous mysql docker container. Then run the MySQL Server container using a created network.
 	![removing container ](./images/rm1.png)
-	![removing container ](./images/rm1.png)
+	![removing container ](./images/rm2.png)
 
 		- First, create an environment variable to store the root password: 
 		```
@@ -53,21 +53,23 @@ docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysq
 		- Verify the environment variable is created.
 
 		```
-		 echo $MYSQL_PW
+		 $ echo $MYSQL_PW
 		```
-		- Create a network in docker
-		```bash
-		docker network create --subnet=172.18.0.0/24 tooling_app_network
+		- To setup a mysql client container and connection to the mysql-server via the mysqlserverhost connection, pull the image and run the container with all of the following command:
 		```
-
-		- Run a container with mysql image
-		```bash
-		docker run --network tooling_app_network -h mysqlserverhost --name=mysql-server -e MYSQL_ROOT_PASSWORD=$MYSQL_PW  -d mysql/mysql-server:latest
+		 $ docker run --network tooling_app_network -h mysqlserverhost --name=mysql-server -e MYSQL_ROOT_PASSWORD=$MYSQL_PW  -d mysql/mysql-server:latest 
 		```
-
-		![run a container ](./images/runcwi.png)
 		![status ](./images/status.png)
 
+	
+
+		- Access through the client mysql container by running the following command:
+
+		```bash
+		$ docker run --network tooling_app_network --name mysql-client -it --rm mysql mysql -h mysqlserverhost -uisaac -p$MYSQL_PW
+		```
+		![Access client container ](./images/runcwi.png)
+		
 
 	- Create a new mysql user: As you already know, it is best practice not to connect to the MySQL server remotely using the root user. Therefore, we will create an SQL script that will create a user we can use to connect remotely.
 
@@ -91,49 +93,46 @@ docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysq
 git clone https://github.com/Isaac-Ayanda/tooling-1.git
 ```
 
+- Populate the database with the tooling users from the terminal and export the location of the SQL file. Verify that the path is exported:
+ ```bash
+$ export tooling_db_schema=tooling/html/db-schema.sql
 
-- Populate the database with the tooling users from the terminal and export the location of the SQL file
-```bash
-export tooling_db_schema=tooling-1/html/db-schema.sql
+$ docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < $tooling_db_schema
+ ```
+![verify exported path ](./images/vpath.png)
+![populate database](./images/dbschemer.png)
 
-docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < $tooling_db_schema
-```
-- Verify that the path is exported
-		![verify exported path ](./images/vpath.png)
-		![populate database](./images/dbschema.png)
-
-- Update the .env file with connection details to the database The .env file is located in the html tooling/html/.env folder but not visible in terminal. 
+- Update the .env file with connection details to the database. The .env file is located in the html tooling/html/.env folder but not visible in terminal. MYSQL_IP=mysqlserverhost; MYSQL_USER=username; MYSQL_PASS=client-secrete-password; MYSQL_DBNAME=toolingdb
 
 ```
-sudo vi .env
+$ sudo vi .env
 
 MYSQL_IP=mysqlserverhost MYSQL_USER=username MYSQL_PASS=client-secrete-password MYSQL_DBNAME=toolingdb
 ```
-- Connect to the mysql container from terminal
-```bash
-docker run --network tooling_app_network --name mysql-client -it --rm mysql mysql -h mysqlserverhost -u$mysql_username -p
-```
+![env file update ](./images/envfile.png)
+![env file update ](./images/envfile2.png)
 
-
-
-- 
 
 
 - Build the tooling app image
 ```bash
-docker build -t tooling:0.0.1 . 
+$ docker build -t tooling:0.0.1 .
 ```
-
-![Start](PBL-20/start.png)
+![updated Dockerfile ](./images/lh1.png)
+![building docker file ](./images/dockerb.png)
+![building docker file ](./images/dockerb2.png)
 
 - Run the container
 ```bash
-docker run --network tooling_app_network -p 8085:80 -it tooling:0.0.1
+$ docker run --network tooling_app_network -p 8085:80 -it tooling:0.0.1
 ```
 
-![Finish](PBL-20/finish.png)
+[ ](./images/lh2.png)
+[ ](./images/error.png)
 
-![tooling](PBL-20/tooling.png)
+![tooling](./images/op2.png)
+![tooling](./images/op1.png)
+
 
 ## Practice Task 1
 
@@ -141,7 +140,7 @@ docker run --network tooling_app_network -p 8085:80 -it tooling:0.0.1
 - Write a Dockerfile for TODO application
 ```dockerfile
 FROM php:7.4.30-cli
-LABEL author="Horleryheancarh"
+LABEL author="Isaac"
 
 RUN apt update \
 	&& apt install -y libpng-dev zlib1g-dev libxml2-dev libzip-dev libonig-dev zip curl unzip \
