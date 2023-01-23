@@ -55,6 +55,10 @@ $ docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d my
 		```
 		 $ echo $MYSQL_PW
 		```
+		- Create a network to serve as a driver bridge.
+		```docker network create --subnet=172.18.0.0/24 tooling_app_network 
+
+		```
 		- To setup a mysql client container and connection to the mysql-server via the mysqlserverhost connection, pull the image and run the container with all of the following command:
 		```
 		 $ docker run --network tooling_app_network -h mysqlserverhost --name=mysql-server -e MYSQL_ROOT_PASSWORD=$MYSQL_PW  -d mysql/mysql-server:latest 
@@ -66,7 +70,7 @@ $ docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d my
 		- Access through the client mysql container by running the following command:
 
 		```bash
-		$ docker run --network tooling_app_network --name mysql-client -it --rm mysql mysql -h mysqlserverhost -uisaac -p$MYSQL_PW
+		$ docker run --network tooling_app_network --name mysql-client -it --rm mysql mysql -h mysql-server -uisaac -p$MYSQL_PW
 		```
 		![Access client container ](./images/runcwi.png)
 		
@@ -95,7 +99,7 @@ git clone https://github.com/Isaac-Ayanda/tooling-1.git
 
 - Populate the database with the tooling users from the terminal and export the location of the SQL file. Verify that the path is exported:
  ```bash
-$ export tooling_db_schema=tooling/html/db-schema.sql
+$ export tooling_db_schema=tooling/html/tooling_db_schema.sql
 
 $ docker exec -i mysql-server mysql -uroot -p$MYSQL_PW < $tooling_db_schema
  ```
@@ -139,7 +143,7 @@ $ docker run --network tooling_app_network -p 8085:80 -it tooling:0.0.1
 ### Part 1
 - Write a Dockerfile for TODO application
 ```dockerfile
-FROM php:7.4.30-cli
+FROM php:7.4-cli
 LABEL author="Isaac"
 
 RUN apt update \
@@ -152,7 +156,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 WORKDIR /app
 COPY . .
-RUN mv .env.sample .env 
+RUN mv .env.sample .env
 EXPOSE 8000
 
 ENTRYPOINT [ "sh", "serve.sh" ]
@@ -173,23 +177,25 @@ php artisan route:clear
 
 php artisan serve  --host=0.0.0.0
 ```
-![todo_image](PBL-20/todo-image.png)
+
 
 - Run both database and app on the same docker network
 
 ```bash
-docker network create --subnet=172.17.0.0/24 todo_app_network
+docker network create --subnet=172.17.0.0/24 tooling_app_network
 
-docker run --network todo_app_network -h mysqlhost --name=mysql-server -e MYSQL_ROOT_PASSWORD=$MYSQL_PW -d mysql
-
-docker run --network todo_app_network -p 8085:8000 -it php_todo:0.0.1
+docker run --network tooling_app_network -p 8085:8000 -it todo-app:0.0.2
 ```
 
-![todo-run](PBL-20/todo-run.png)
+![build todo image](./images/build-todo.png)
+![build todo image](./images/build-todo2.png)
+![run todo app](./images/run-todo.png)
+![run todo app](./images/run-todo2.png)
+
 
 - Access the application from the browser
 
-![todo-web](PBL-20/todo-web.png)
+![Access-todo](./images/access-todo.png)
 
 
 ### Part 2
@@ -199,12 +205,14 @@ docker run --network todo_app_network -p 8085:8000 -it php_todo:0.0.1
 ```bash
 docker login
 
-docker build -t yheancarh/php_todo:0.0.1 .
+docker build -t zik777/todo_app:0.0.1 .
 
-docker push yheancarh/php_todo:0.0.1
+docker push zik777/todo_app:0.0.1
 ```
-
-![docker](PBL-20/docker-1.png)
+![Access-docker hub](./images/access-docker.png)
+![build and push image](./images/build-docker.png)
+![push to docker](./images/push-2-docker.png)
+![image in docker](./images/push-2-docker2.png)
 
 
 ### Part 3
