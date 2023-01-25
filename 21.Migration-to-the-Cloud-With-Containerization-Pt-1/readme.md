@@ -237,14 +237,14 @@ pipeline {
 
     	stage('Clone Github Repo') {
       		steps {
-            	git branch: 'main', url: 'https://github.com/Horleryheancarh/php-todo.git'
+            	git branch: 'todo-app-updated', url: 'https://github.com/Isaac-Ayanda/php-todo.git'
       		}
     	}
 
 		stage ('Build Docker Image') {
 			steps {
 				script {
-					sh 'docker build -t yheancarh/php_todo:${BRANCH_NAME}-${BUILD_NUMBER} .'
+					sh 'docker build -t zik777/todo-app:${BRANCH_NAME}-${BUILD_NUMBER} .'
 				}
 			}
 		}
@@ -276,15 +276,17 @@ pipeline {
 
 - Create a multibranch pipeline
 
-![MutliPipeline](PBL-20/multi.png)
+![MutliPipeline](./images/todo-app-docker.png)
 
 - Simulate a CI pipeline from a feature and master using previously created Jenkinsfile
 
-![CI](PBL-20/ci.png)
+
+![CI](./images/features2.png)
+![CI](./images/features.png)
 
 - Verify that the images pushed from the CI can be found at the registry
 
-![docker](PBL-20/docker-2.png)
+![docker](./images/docker-2.png)
 
 ## Deployment with docker-compose
 - Create a file name it ```tooling.yaml```
