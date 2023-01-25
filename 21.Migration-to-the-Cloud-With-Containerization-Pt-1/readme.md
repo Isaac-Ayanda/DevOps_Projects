@@ -321,35 +321,13 @@ volumes:
   db:
 ```
 
-![dockercompose](PBL-20/dc1.png)
+![dockercompose](./images/docker-compose1.png)
 
 
 - Write a Jenkinsfile to test before pushing to dockerhub
 
-```groovy
-stage ('Test Endpoint') {
-	steps {
-		script {
-			while (true) {
-				def res = httpRequest 'http://localhost:5000'
-			}
-		}
-	}
-}
+![dockercompose](./images/docker-compose2.png)
 
-stage ('Push Image To Docker Hub') {
-	when { expression { res.status == 200 } }
-	steps {
-		script {
-			sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-
-			sh 'docker push yheancarh/php_todo:${BRANCH_NAME}-${BUILD_NUMBER}'
-		}
-	}
-}
-```
-
-<!-- ![] -->
 
 <!-- ## Practice Task 2 -->
 
