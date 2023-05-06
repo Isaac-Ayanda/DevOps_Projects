@@ -322,12 +322,13 @@
 
 ![update Jekins pipeline](./images/include-sonarqube-in-todo.jpg)
 ![sonar pipeline failed](./images/sonar-failed.jpg)
-![sonarQube gate deployed](./images/sonar-gate-deployed.jpg)
+
 
 - Update the SonarQube Quality Gate stage in the Php/Jenkinsfile to ensure that the quality gate does not deploy applications to the production environment if there are bugs or issues with the code then commit to update changes. Ensure npm is installed and xdebug.mode=develop,debug,coverage on the jenkins server. Build aborted since the code did not pass quality check.
 
 ![update Jenkins file](./images/update-Jenkinsfile-todo1.jpg)
 ![install npm](./images/install-npm.jpg)
+![sonarQube gate deployed](./images/sonar-gate-deployed.jpg)
 ![Build again](./images/quality-no1.jpg)
 ![Build again](./images/quality-no2.jpg)
 
