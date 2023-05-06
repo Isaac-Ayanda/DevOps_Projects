@@ -1,4 +1,4 @@
-# Automate Infrastructure With IaC using IAC – Terraform Cloud
+# Infrastructure Automation With IAC – Terraform
 
 
 ## Migrate codes to Terraform Cloud
