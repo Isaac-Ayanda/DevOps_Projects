@@ -322,6 +322,14 @@
 
 ![update Jekins pipeline](./images/include-sonarqube-in-todo.jpg)
 ![sonar pipeline failed](./images/sonar-failed.jpg)
+![sonarQube gate deployed](./images/sonar-gate-deployed.jpg)
+
+- Update the SonarQube Quality Gate stage in the Php/Jenkinsfile to ensure that the quality gate does not deploy applications to the production environment if there are bugs or issues with the code then commit to update changes. Ensure npm is installed and xdebug.mode=develop,debug,coverage on the jenkins server. Build aborted since the code did not pass quality check.
+
+![update Jenkins file](./images/update-Jenkinsfile-todo1.jpg)
+![install npm](./images/install-npm.jpg)
+![Build again](./images/quality-no1.jpg)
+![Build again](./images/quality-no2.jpg)
 
 6. The sonarqube quality gate failed then the need to Configure sonar-scanner.properties by accessing the tools directory on the sunarqube server to configure the properties file in which SonarQube will require to function during pipeline execution. Then "Restart SonarQube Quality Gate" for it to run successfully
 
@@ -332,14 +340,7 @@
 ![add sonarqube properties](./images/add-sonar-properties.jpg)
 ![restart sonarQube gate](./images/sonar-gate-run.jpg)
 ![restart sonarQube gate](./images/sonar-gate-run2.jpg)
-![sonarQube gate deployed](./images/sonar-gate-deployed.jpg)
 
-- Update the SonarQube Quality Gate stage in the Php/Jenkinsfile to ensure that the quality gate does not deploy applications to the production environment if there are bugs or issues with the code then commit to update changes. Ensure npm is installed and xdebug.mode=develop,debug,coverage on the jenkins server. Build aborted since the code did not pass quality check.
-
-![update Jenkins file](./images/update-Jenkinsfile-todo1.jpg)
-![install npm](./images/install-npm.jpg)
-![Build again](./images/quality-no1.jpg)
-![Build again](./images/quality-no2.jpg)
 
 ## Ninth Step: Introducing Jenkins Agent.
 
