@@ -183,4 +183,4 @@ spec:
 
 ![check](PBL-23/check.png)
 
-![darey](PBL-23/darey.png)
+
