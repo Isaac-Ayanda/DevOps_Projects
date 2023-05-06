@@ -321,7 +321,6 @@
 5. Update Jenkins Pipeline in Todo directory to include SonarQube scanning and Quality Gate, commit changes then scan Todo repo. 
 
 ![update Jekins pipeline](./images/include-sonarqube-in-todo.jpg)
-![sonar pipeline failed](./images/sonar-failed.jpg)
 
 
 - Update the SonarQube Quality Gate stage in the Php/Jenkinsfile to ensure that the quality gate does not deploy applications to the production environment if there are bugs or issues with the code then commit to update changes. Ensure npm is installed and xdebug.mode=develop,debug,coverage on the jenkins server. Build aborted since the code did not pass quality check.
