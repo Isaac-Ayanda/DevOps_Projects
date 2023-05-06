@@ -331,7 +331,7 @@
 ![Build again](./images/quality-no1.jpg)
 ![Build again](./images/quality-no2.jpg)
 
-6. The sonarqube quality gate failed then the need to Configure sonar-scanner.properties by accessing the tools directory on the sunarqube server to configure the properties file in which SonarQube will require to function during pipeline execution. Then "Restart SonarQube Quality Gate" for it to run successfully
+6. Get the code reviewed to remove bugs. Then Configure sonar-scanner.properties by accessing the tools directory on the sunarqube server to configure the properties file in which SonarQube will require to function during pipeline execution. Then run the pipeline.
 
 - Run `cd /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQubeScanner/conf/`
 - Open sonar-scanner.properties file. Run `sudo vi sonar-scanner.properties` then add configuration related to php-todo project.
