@@ -2,7 +2,7 @@
 
 ## Setup the Network Infrastructure for the Project
 
-![Kubernetes](PBL-21/K8s_architecture.png)
+![Kubernetes](PBL-21/K8s_architecture.npng)
 
 > Details 3 master nodes and 3 worker nodes in the same cluster and subnet
 
@@ -47,14 +47,14 @@ sudo mv cfssl cfssljson /usr/local/bin/
 
 ## Test the master nodes
 
-![master-status](PBL-21/masterstatus.png)
+![master-status](PBL-21/masterstatus.npng)
 
-![master-test](PBL-21/mastertest.png)
+![master-test](PBL-21/mastertest.npng)
 
 ## Configure the Worker Nodes
 
 ## Test the Worker Nodes
 
-![worker](PBL-21/workernodes.png)
+![worker](PBL-21/workernodes.npng)
 
-ALL CONFIGURATION COMMANDS ARE CONTAINED IN [file.](PBL-21/configfile.sh)
+
