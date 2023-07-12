@@ -1,5 +1,5 @@
 # DevOps_Projects
-## Below are my Implementation of 20+ Intensive DevOps Projects following Dare.IO professional Project Based Learning:
+## Below are my Implementation of 20 Intensive DevOps Projects following my learnings from Dare.IO:
 
 1. [AWS-LAMP-STACK IMPLEMENTATION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/01.LAMP-Web-Stack-Implementation/readme.md)
 
@@ -44,9 +44,3 @@
 20. [AUTOMATE INFRASTRUCTURE WITH IAC USING TERRAFORM. – TERRAFORM CLOUD](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/20.Automate-Infrastructure-With-IaC-Using-Terraform-Pt-4/readme.md)
     
 21. [MIGRATION TO THE СLOUD WITH CONTAINERIZATION. PART 1 - DOCKER & DOCKER COMPOSE](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/21.Migration-to-the-Cloud-With-Containerization-Pt-1/readme.md)
-    
-22. [ORCHESTRATING CONTAINERS ACROSS MULTIPLE VIRTUAL SERVERS WITH KUBERNETES. PART 1](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/22.Orchestrating-Containers-Across-Virtual-Servers-With-Kubernetes/readme.md)
-
-23. [DEPLOYING APPLICATIONS INTO KUBERNETES CLUSTER](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/23.Deploying-Applications-Into-Kubernetes-Cluster/readme.md)
-
-24. [PERSISTING DATA IN KUBERNETES](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/24.Persisting-Data-In-Kubernetes/readme.md)
