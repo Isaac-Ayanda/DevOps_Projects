@@ -326,9 +326,13 @@
 - Update the SonarQube Quality Gate stage in the Php/Jenkinsfile to ensure that the quality gate does not deploy applications to the production environment if there are bugs or issues with the code then commit to update changes. Ensure npm is installed and xdebug.mode=develop,debug,coverage on the jenkins server. Build aborted since the code did not pass quality check.
 
 ![update Jenkins file](./images/update-Jenkinsfile-todo1.jpg)
+
 ![install npm](./images/install-npm.jpg)
+
 ![sonarQube gate deployed](./images/sonar-gate-deployed.jpg)
+
 ![Build again](./images/quality-no1.jpg)
+
 ![Build again](./images/quality-no2.jpg)
 
 6. Get the code reviewed to remove bugs. Then Configure sonar-scanner.properties by accessing the tools directory on the sunarqube server to configure the properties file in which SonarQube will require to function during pipeline execution. Then restart the pipeline from "SonarQube Quality Gate" stage.
@@ -337,8 +341,11 @@
 - Open sonar-scanner.properties file. Run `sudo vi sonar-scanner.properties` then add configuration related to php-todo project.
 
 ![edit sonorqube properties](./images/edit-sonar-properties.jpg)
+
 ![add sonarqube properties](./images/add-sonar-properties.jpg)
+
 ![restart sonarQube gate](./images/sonar-gate-run.jpg)
+
 ![restart sonarQube gate](./images/sonar-gate-run2.jpg)
 
 
@@ -347,16 +354,9 @@
 - Configured webhook between jenkins server and github to automatically run a build job when there is a push by setting up webhook at Github with Jenkins server public ip details. Launch a new server -agent1 as Jenkins-slave and install Java on it. Then configure it on Jenkins as agent.
 
 ![Jenkins agent](./images/jenkins-slave4.jpg)
+
 ![Jenkins agent](./images/jenkins-slave.jpg)
+
 ![Jenkins agent](./images/jenkins-slave1.jpg)
+
 ![Jenkins agent](./images/jenkins-slave2.jpg)
-
-
-
-
-
-
-
-
-
-
