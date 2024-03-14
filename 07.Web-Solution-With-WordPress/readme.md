@@ -1,4 +1,4 @@
-# Deployed a Three-Teir Architechture WordPress Server in AWS
+# Deployed WordPress Server in AWS
 
 In this project, I setup a Three-Tier architecture comprising of a client, a linux Redhat webserver where I installed WordPress and another linux Redhat database server where I installed the database.
 - `I worked with some storage and disk management utlities that ensures that the disks used to store files on the Linux servers are adequately partitioned and managed.`
