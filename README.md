@@ -1,5 +1,5 @@
 # DevOps_Projects
-## Below are my Implementation of 20 Intensive DevOps Projects:
+## Here are some of my Intensive DevOps Projects:
 
 1. [AWS-LAMP-STACK IMPLEMENTATION](https://github.com/Isaac-Ayanda/DevOps_Projects/blob/main/01.LAMP-Web-Stack-Implementation/readme.md)
 
